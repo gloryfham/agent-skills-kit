@@ -1,0 +1,19 @@
+{
+  "name": "glory-agent-kit",
+  "version": "1.0.0",
+  "description": "Glory Agent Kit — 保险产品与签证项目查询技能，为 Claude Code 提供产品库数据访问能力。",
+  "author": {
+    "name": "Glory"
+  },
+  "homepage": "https://github.com/gloryfham/agent-skills",
+  "repository": "https://github.com/gloryfham/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "glory",
+    "glory-agent-kit",
+    "insurance",
+    "visa",
+    "product-catalog",
+    "skills"
+  ]
+}
