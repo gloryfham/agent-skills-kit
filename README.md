@@ -18,6 +18,7 @@ Each skill lives under `skills/<skill-id>/`:
 | Skill | Purpose |
 |--------|---------|
 | [glory-global-path-planner](skills/glory-global-path-planner/SKILL.md) | 荣耀全球路径规划师 — 联动保险与移民签证的家庭未来规划智能助手。 |
+| [glory-product-query](skills/glory-product-query/SKILL.md) | 查询保险产品/销售计划列表，支持按状态、渠道筛选，并对结果进行分析统计。 |
 
 ## Using these skills
 
@@ -45,7 +46,9 @@ Each skill lives under `skills/<skill-id>/`:
    npx skills add gloryfham/agent-skills
    ```
 
-## MCP Server
+## MCP Servers
+
+### glory-global-path-planner
 
 This skill uses the `@gloryfham/mcp-global-planner` npm package as its MCP Server:
 
@@ -66,3 +69,29 @@ This skill uses the `@gloryfham/mcp-global-planner` npm package as its MCP Serve
 | Visa | `searchVisaProjects(keyword?, country?, projectType?, identityType?, minAmount?)` | Search visa projects |
 | Visa | `getVisaProjectDetail(projectCode)` | Get project details |
 | **Core** | **`generateFamilyPathPlan`** | **Generate family identity + insurance path recommendation** |
+
+### glory-product-query
+
+This skill uses the `@gloryfham/glory-product-query-mcp` npm package as its MCP Server:
+
+- **npm**: https://www.npmjs.com/package/@gloryfham/glory-product-query-mcp
+- **Install**: `npm install @gloryfham/glory-product-query-mcp`
+- **Setup**:
+
+  ```bash
+  # 初始化配置（baseUrl 向管理员获取）
+  npx glory-product-query-mcp config init --baseUrl <API地址>
+
+  # 配置客户端（根据使用的工具选择一个）
+  npx glory-product-query-mcp setup claude-code      # Claude Code
+  npx glory-product-query-mcp setup qoder            # Qoder
+  npx glory-product-query-mcp setup claude-desktop   # Claude Desktop
+  npx glory-product-query-mcp setup kiro             # Kiro
+  npx glory-product-query-mcp setup opencode         # OpenCode
+  ```
+
+### Available Tools
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| Product Query | `queryWecomPlanList` | 查询企微渠道保险产品销售计划列表，支持按状态、渠道、关键词筛选 |
