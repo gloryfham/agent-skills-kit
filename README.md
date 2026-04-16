@@ -1,6 +1,6 @@
 # Agent Skills
 
-Claude Code **Agent Skills** for Glory wealth workflows: structured instructions and tool references for product catalog queries.
+Claude Code **Agent Skills** for Glory global planning workflows: structured instructions and tool references for the **荣耀全球路径规划师** (Glory Global Path Planner).
 
 This repository is a **[Claude Code plugin](https://code.claude.com/docs/en/plugins)** (manifest under [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json), skills in [`skills/`](skills/)).
 
@@ -12,13 +12,12 @@ This repository is a **[Claude Code plugin](https://code.claude.com/docs/en/plug
 Each skill lives under `skills/<skill-id>/`:
 
 - `SKILL.md` — front matter (`name`, `description`) plus the full workflow the agent must follow.
-- `references/` — supporting material (MCP tool documentation).
 
 ## Skills in this repo
 
 | Skill | Purpose |
 |--------|---------|
-| [glory-product-catalog](skills/glory-product-catalog/SKILL.md) | 保险产品与签证项目查询，通过 MCP Server 提供实时产品数据。 |
+| [glory-global-path-planner](skills/glory-global-path-planner/SKILL.md) | 荣耀全球路径规划师 — 联动保险与移民签证的家庭未来规划智能助手。 |
 
 ## Using these skills
 
@@ -48,8 +47,22 @@ Each skill lives under `skills/<skill-id>/`:
 
 ## MCP Server
 
-This skill requires a running MCP Server `glory-product-catalog`. The server is integrated into the `business-hk-web` Spring Boot application:
+This skill uses the `@gloryfham/mcp-global-planner` npm package as its MCP Server:
 
-- **Endpoint**: `http://localhost:8076/sse`
-- **Source**: `glory-business-hk` project, `business-hk-service/.../mcp/ProductMcpTool.java`
-- **Data**: JSON files under `business-hk-web/src/main/resources/mcp/`
+- **npm**: https://www.npmjs.com/package/@gloryfham/mcp-global-planner
+- **GitHub**: https://github.com/sergio-wen/mcp-global-planner
+- **Install**: `npm install -g @gloryfham/mcp-global-planner`
+- **Bin**: `gloryfham-mcp-global-planner`
+
+### Available Tools
+
+| Category | Tool | Purpose |
+|----------|------|---------|
+| Insurance | `listInsuranceProducts` | List all insurance products |
+| Insurance | `searchInsuranceProducts(keyword?, productType?, region?)` | Search insurance products |
+| Insurance | `getInsuranceProductDetail(productCode)` | Get product details |
+| Visa | `listVisaProjectTypes` | List visa project categories |
+| Visa | `listAllVisaProjects` | List all visa/immigration projects |
+| Visa | `searchVisaProjects(keyword?, country?, projectType?, identityType?, minAmount?)` | Search visa projects |
+| Visa | `getVisaProjectDetail(projectCode)` | Get project details |
+| **Core** | **`generateFamilyPathPlan`** | **Generate family identity + insurance path recommendation** |
