@@ -38,6 +38,33 @@ npx glory-product-query-mcp setup opencode         # OpenCode
 - 统计或分析产品数据（如数量、分布、对比）
 - 提及 wecom、企微、渠道相关的产品查询
 
+## 首次使用引导
+
+当 skill 被触发但 MCP 工具不可用时（即 `mcp__glory-product-query__queryWecomPlanList` 不在可用工具列表中），**不要尝试调用工具**，而是输出以下引导信息：
+
+> **glory-product-query MCP Server 尚未配置**
+>
+> 请按以下步骤完成安装：
+>
+> ```bash
+> # 1. 安装 MCP Server
+> npm install @gloryfham/glory-product-query-mcp
+>
+> # 2. 初始化配置（baseUrl 向管理员获取）
+> npx glory-product-query-mcp config init --baseUrl <API地址>
+>
+> # 3. 配置当前客户端
+> npx glory-product-query-mcp setup qoder    # 根据实际客户端选择
+> ```
+>
+> 完成后请重启客户端，然后重新发起查询。
+
+如果工具存在但调用时返回 `未配置 baseUrl` 错误，说明第 2 步未完成，引导用户执行：
+
+```bash
+npx glory-product-query-mcp config init --baseUrl <API地址>
+```
+
 ## MCP 工具
 
 ### queryWecomPlanList

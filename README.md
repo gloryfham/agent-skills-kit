@@ -76,19 +76,26 @@ This skill uses the `@gloryfham/glory-product-query-mcp` npm package as its MCP 
 
 - **npm**: https://www.npmjs.com/package/@gloryfham/glory-product-query-mcp
 - **Install**: `npm install @gloryfham/glory-product-query-mcp`
-- **Setup**:
 
-  ```bash
-  # 初始化配置（baseUrl 向管理员获取）
-  npx glory-product-query-mcp config init --baseUrl <API地址>
+> **Important**: 安装 skill 后，必须完成以下 MCP Server 配置才能正常使用产品查询功能。  
+> 仅执行 `npx skills add` 只会注册 skill 定义，不会自动安装或配置 MCP Server。
 
-  # 配置客户端（根据使用的工具选择一个）
-  npx glory-product-query-mcp setup claude-code      # Claude Code
-  npx glory-product-query-mcp setup qoder            # Qoder
-  npx glory-product-query-mcp setup claude-desktop   # Claude Desktop
-  npx glory-product-query-mcp setup kiro             # Kiro
-  npx glory-product-query-mcp setup opencode         # OpenCode
-  ```
+**完整安装步骤**:
+
+```bash
+# 1. 安装 MCP Server
+npm install @gloryfham/glory-product-query-mcp
+
+# 2. 初始化配置（baseUrl 向管理员获取，必须完成此步）
+npx glory-product-query-mcp config init --baseUrl <API地址>
+
+# 3. 配置客户端（根据使用的工具选择一个）
+npx glory-product-query-mcp setup claude-code      # Claude Code
+npx glory-product-query-mcp setup qoder            # Qoder
+npx glory-product-query-mcp setup claude-desktop   # Claude Desktop
+npx glory-product-query-mcp setup kiro             # Kiro
+npx glory-product-query-mcp setup opencode         # OpenCode
+```
 
 ### Available Tools
 
