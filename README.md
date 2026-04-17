@@ -1,4 +1,4 @@
-# Agent Skills
+# Agent Skills Kit
 
 Claude Code **Agent Skills** for Glory global planning workflows: structured instructions and tool references for the **荣耀全球路径规划师** (Glory Global Path Planner).
 
@@ -27,7 +27,7 @@ Each skill lives under `skills/<skill-id>/`:
 1. **Local checkout (development)**:
 
    ```bash
-   claude --plugin-dir /path/to/agent-skills
+   claude --plugin-dir /path/to/agent-skills-kit
    ```
 
    Then run `/reload-plugins` if you change files.
@@ -35,7 +35,7 @@ Each skill lives under `skills/<skill-id>/`:
 2. **Install via marketplace (team or GitHub)**:
 
    ```text
-   /plugin marketplace add gloryfham/agent-skills
+   /plugin marketplace add gloryfham/agent-skills-kit
    /plugin install glory-agent-kit@glory-agent-kit
    /reload-plugins
    ```
@@ -43,7 +43,7 @@ Each skill lives under `skills/<skill-id>/`:
 3. **Install from GitHub directly**:
 
    ```bash
-   npx skills add gloryfham/agent-skills
+   npx skills add gloryfham/agent-skills-kit
    ```
 
 ## MCP Servers
@@ -53,7 +53,7 @@ Each skill lives under `skills/<skill-id>/`:
 This skill uses the `@gloryfham/mcp-global-planner` npm package as its MCP Server:
 
 - **npm**: https://www.npmjs.com/package/@gloryfham/mcp-global-planner
-- **GitHub**: https://github.com/sergio-wen/mcp-global-planner
+- **GitHub**: https://github.com/gloryfham/mcp-global-planner
 - **Install**: `npm install -g @gloryfham/mcp-global-planner`
 - **Bin**: `gloryfham-mcp-global-planner`
 
