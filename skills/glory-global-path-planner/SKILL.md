@@ -1,6 +1,6 @@
 ---
 name: glory-global-path-planner
-description: 荣耀全球路径规划师 — 联动保险与移民签证的家庭未来规划智能助手。当客户咨询身份配置、家庭保障、子女教育、跨境生活安排时，触发此 skill。
+description: 荣耀全球路径规划师 — 联动保险、移民签证与信托传承的家庭未来规划智能助手。当客户咨询身份配置、家庭保障、子女教育、财富传承、跨境生活安排时，触发此 skill。
 license: MIT
 metadata:
   author: Glory
@@ -44,6 +44,17 @@ metadata:
 | `searchVisaProjects(keyword?, country?, projectType?, identityType?, minAmount?)` | 全部可选 | 搜索签证/移民项目 |
 | `getVisaProjectDetail(projectCode)` | projectCode(必填) | 获取项目详情 |
 
+### 信托产品查询
+
+| 工具 | 参数 | 用途 |
+|------|------|------|
+| `listTrustServiceTypes` | 无 | 获取信托服务类型分类（家族信托、员工信托、海外公司秘书服务） |
+| `listTrustJurisdictions` | 无 | 获取所有司法管辖区及法律特征对比 |
+| `getTrustJurisdictionDetail(jurisdictionCode)` | jurisdictionCode(必填) | 获取司法管辖区详情 |
+| `listTrustProducts` | 无 | 获取所有信托产品列表 |
+| `searchTrustProducts(keyword?, serviceType?, jurisdiction?, jurisdictionCode?)` | 全部可选 | 搜索信托产品 |
+| `getTrustProductDetail(productCode)` | productCode(必填) | 获取信托产品详情 |
+
 ### 核心：路径规划
 
 | 工具 | 参数 | 用途 |
@@ -61,6 +72,18 @@ metadata:
 - `H01` — 分红险（Whole Life Participating）
 - `H08` — 年金险（Annuity）
 - `H09` — IUL（指数型万能寿险）
+
+**信托服务类型**：
+- `家族信托` — 香港家族信托、新加坡家族信托
+- `员工信托` — 上市前/后员工信托服务
+- `海外公司秘书服务` — BVI、开曼、塞舌尔等离岸公司服务
+
+**信托司法管辖区**：
+- `HK` — 香港（普通法，永久期限）
+- `SG` — 新加坡（普通法，100年期限）
+- `BVI` — 英属维尔京群岛（离岸金融中心）
+- `KY` — 开曼群岛（离岸金融中心）
+- `SC` — 塞舌尔群岛（离岸金融中心）
 
 **签证项目类型分类**：
 - `传统国家` — 美国、加拿大等传统移民国家
@@ -102,12 +125,15 @@ metadata:
 - 分阶段路径步骤（含时间线）
 - 匹配的保险产品建议
 - 匹配的签证项目建议
+- 匹配的信托产品建议
 
 ### 第四步：产品详情补充
 
 根据路径规划结果，调用详情工具获取具体产品/项目的完整信息：
 - `getInsuranceProductDetail(productCode)`
 - `getVisaProjectDetail(projectCode)`
+- `getTrustProductDetail(productCode)`
+- `getTrustJurisdictionDetail(jurisdictionCode)`
 
 ### 第五步：结构化输出
 
@@ -115,7 +141,8 @@ metadata:
 1. **路径概览** — 用表格呈现各阶段的任务与时间线
 2. **身份方案** — 推荐签证项目，表格呈现（项目名、国家、身份类型、投资金额、居住要求）
 3. **保障方案** — 推荐保险产品，表格呈现（产品名、类型、地区、简述）
-4. **下一步行动** — 具体可执行的建议
+4. **传承方案** — 推荐信托产品，表格呈现（产品名、服务类型、司法管辖区、最低金额、特点）
+5. **下一步行动** — 具体可执行的建议
 
 ---
 
