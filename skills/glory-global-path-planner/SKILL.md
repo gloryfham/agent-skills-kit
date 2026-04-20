@@ -5,7 +5,7 @@ license: MIT
 metadata:
   author: Glory
   version: "1.0.0"
-  homepage: "https://github.com/sergio-wen/mcp-global-planner"
+  homepage: "https://github.com/gloryfham/mcp-global-planner"
   agent:
     requires:
       bins: ["gloryfham-mcp-global-planner"]
