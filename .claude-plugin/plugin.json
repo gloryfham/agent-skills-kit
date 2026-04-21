@@ -1,7 +1,7 @@
 {
   "name": "glory-agent-kit",
-  "version": "1.0.0",
-  "description": "Glory Agent Kit — 保险产品与签证项目查询技能，为 Claude Code 提供产品库数据访问能力。",
+  "version": "2.0.0",
+  "description": "Glory Agent Kit — 保险产品与签证项目查询技能，为 Claude Code 提供产品库数据访问能力。现已支持国内保险、海外保险、签证移民、信托传承。",
   "author": {
     "name": "Glory"
   },
@@ -12,7 +12,9 @@
     "glory",
     "glory-agent-kit",
     "insurance",
+    "domestic-insurance",
     "visa",
+    "trust",
     "product-catalog",
     "skills"
   ]

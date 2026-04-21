@@ -4,14 +4,14 @@
     "name": "Glory"
   },
   "metadata": {
-    "description": "Glory Agent Kit — 保险产品和签证项目查询技能 for Claude Code."
+    "description": "Glory Agent Kit — 保险产品、签证项目和信托传承查询技能 for Claude Code. 现已支持国内保险+海外保险双引擎。"
   },
   "plugins": [
     {
       "name": "glory-agent-kit",
       "source": "./",
-      "description": "Glory Agent Kit — 保险产品与签证项目查询，通过 MCP Server 提供实时产品数据。",
-      "version": "1.0.0",
+      "description": "Glory Agent Kit — 保险产品与签证项目查询，通过 MCP Server 提供实时产品数据。现已支持国内保险、海外保险、签证移民、信托传承。",
+      "version": "2.0.0",
       "author": {
         "name": "Glory"
       },
@@ -22,7 +22,9 @@
         "glory",
         "glory-agent-kit",
         "insurance",
+        "domestic-insurance",
         "visa",
+        "trust",
         "product-catalog"
       ],
       "category": "Productivity"
